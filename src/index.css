@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Cinzel Decorative", Georgia, serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Cinzel Decorative", serif;
+  
+  --color-gold-light: #e2c199;
+  --color-gold-base: #c59b67;
+  --color-gold-dark: #a47c4c;
+  --color-bg-black: #080808;
+  --color-bg-card: #121212;
+}
+
+body {
+  background-color: #080808;
+  color: #ffffff;
+}
+
+/* Custom aesthetic classes for Victorian Luxury theme */
+.gold-gradient {
+  background: linear-gradient(135deg, #e2c199 0%, #c59b67 50%, #a47c4c 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #e2c199 0%, #c59b67 50%, #a47c4c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #e2c199 0%, #c59b67 50%, #a47c4c 100%) 1;
+}
+
+.gold-shadow {
+  box-shadow: 0 0 15px rgba(197, 155, 103, 0.15);
+}
+
+.gold-shadow-lg {
+  box-shadow: 0 0 30px rgba(197, 155, 103, 0.3);
+}
+
+.dark-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #c59b67;
+  border-radius: 3px;
+}
+
+/* Elegant ornamental divider classes */
+.ornament-line {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #c59b67 50%, transparent 100%);
+  width: 100%;
+}
+
+.ornament-diamond {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #c59b67;
+  transform: rotate(45deg);
+  border: 1px solid #e2c199;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+  will-change: transform;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Família Rocha Studio",
+  "description": "Site institucional premium e painel administrativo do Família Rocha Studio, estúdio de tatuagem e piercing clássico, vitoriano e luxuoso.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
