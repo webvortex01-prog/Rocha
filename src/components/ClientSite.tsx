@@ -387,7 +387,7 @@ export default function ClientSite({
       
       {/* EXQUISITE TAB SWITCHER - TWO GIANT MAJESTIC NAVIGATION BUTTONS */}
       <div className="bg-[#050505] border-b border-gold-dark/25 py-6 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 gap-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
             type="button"
             onClick={() => {
@@ -1739,7 +1739,7 @@ export default function ClientSite({
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-7 gap-2 bg-[#080808]/80 p-3 rounded-xl border border-gold-dark/20 sm:p-4">
+                    <div className="grid grid-cols-7 gap-1 sm:gap-2 bg-[#080808]/80 p-2 sm:p-4 rounded-xl border border-gold-dark/20">
                       {/* Weekday headers */}
                       {['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map((day) => (
                         <div key={day} className="text-center text-[10px] uppercase font-bold text-gold-dark py-1">

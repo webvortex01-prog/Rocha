@@ -461,10 +461,10 @@ export default function AdminDashboard({
   };
 
   return (
-    <div className="min-h-screen bg-bg-black flex text-gray-300 font-sans selection:bg-gold-base selection:text-black">
+    <div className="min-h-screen bg-bg-black flex flex-col md:flex-row text-gray-300 font-sans selection:bg-gold-base selection:text-black">
       
-      {/* SIDEBAR NAVIGATION - Width: 270px; Background: #0f0f0f; Border Right: 1px solid #c59b67 */}
-      <aside className="w-[270px] bg-[#0f0f0f] border-r border-gold-base/30 flex flex-col justify-between shrink-0 sticky top-0 h-screen z-20">
+      {/* SIDEBAR NAVIGATION - DESKTOP ONLY */}
+      <aside className="hidden md:flex w-[270px] bg-[#0f0f0f] border-r border-gold-base/30 flex-col justify-between shrink-0 sticky top-0 h-screen z-20">
         <div>
           {/* Logo Brand Header */}
           <div className="p-6 border-b border-gold-dark/20 flex flex-col items-center">
@@ -530,8 +530,32 @@ export default function AdminDashboard({
         </div>
       </aside>
 
+      {/* MOBILE BOTTOM NAVIGATION */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0f0f0f] border-t border-gold-base/30 z-50 flex justify-around items-center p-2 pb-4 shadow-[0_-4px_20px_rgba(8,8,8,0.8)] backdrop-blur-md">
+        <button onClick={() => setActiveTab('geral')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'geral' ? 'text-gold-light' : 'text-gray-500'}`}>
+          <Home className={`w-5 h-5 ${activeTab === 'geral' ? 'drop-shadow-[0_0_8px_rgba(197,155,103,0.8)]' : ''}`} />
+          <span className="text-[9px] uppercase font-bold tracking-widest">Geral</span>
+        </button>
+        <button onClick={() => setActiveTab('agenda')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'agenda' ? 'text-gold-light' : 'text-gray-500'}`}>
+          <Calendar className={`w-5 h-5 ${activeTab === 'agenda' ? 'drop-shadow-[0_0_8px_rgba(197,155,103,0.8)]' : ''}`} />
+          <span className="text-[9px] uppercase font-bold tracking-widest">Agenda</span>
+        </button>
+        <button onClick={() => setActiveTab('financeiro')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'financeiro' ? 'text-gold-light' : 'text-gray-500'}`}>
+          <TrendingUp className={`w-5 h-5 ${activeTab === 'financeiro' ? 'drop-shadow-[0_0_8px_rgba(197,155,103,0.8)]' : ''}`} />
+          <span className="text-[9px] uppercase font-bold tracking-widest">Finanças</span>
+        </button>
+        <button onClick={() => setActiveTab('estoque')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'estoque' ? 'text-red-400' : 'text-gray-500'} ${hasCriticalStock && activeTab !== 'estoque' ? 'animate-pulse text-red-500/70' : ''}`}>
+          <Package className={`w-5 h-5 ${activeTab === 'estoque' ? 'drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]' : ''}`} />
+          <span className="text-[9px] uppercase font-bold tracking-widest">Estoque</span>
+        </button>
+        <button onClick={() => setActiveTab('galeria')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'galeria' ? 'text-gold-light' : 'text-gray-500'}`}>
+          <Image className={`w-5 h-5 ${activeTab === 'galeria' ? 'drop-shadow-[0_0_8px_rgba(197,155,103,0.8)]' : ''}`} />
+          <span className="text-[9px] uppercase font-bold tracking-widest">Galeria</span>
+        </button>
+      </nav>
+
       {/* MAIN CONTAINER */}
-      <main className="flex-1 overflow-y-auto h-screen p-8 sm:p-12">
+      <main className="flex-1 overflow-y-auto h-screen p-4 pb-28 md:p-8 md:pb-8 lg:p-12 relative">
         
         {/* SOBERANO DASHBOARD SELECTOR - THREE MAJESTIC BUTTONS */}
         <div className="mb-10 p-5 rounded-2xl bg-gradient-to-r from-[#0d0c0a] via-[#050505] to-[#0d0c0a] border border-gold-dark/30 shadow-[0_0_30px_rgba(197,155,103,0.15)] animate-fade-in">
@@ -747,7 +771,7 @@ export default function AdminDashboard({
                 </div>
               ) : (
                 <div className="overflow-x-auto dark-scrollbar pb-2">
-                  <table className="w-full text-left text-xs border-collapse">
+                  <table className="w-full min-w-[800px] text-left text-xs border-collapse">
                     <thead>
                       <tr className="border-b border-gold-dark/15 text-gold-light uppercase text-[10px] font-bold tracking-wider">
                         <th className="py-4 px-3 w-[20%]">Cliente / WhatsApp</th>
@@ -1132,7 +1156,7 @@ export default function AdminDashboard({
                   </span>
                 </div>
 
-                <div className="grid grid-cols-7 gap-2.5 bg-black/40 p-4 rounded-xl border border-gold-dark/15">
+                <div className="grid grid-cols-7 gap-1.5 sm:gap-2.5 bg-black/40 p-2 sm:p-4 rounded-xl border border-gold-dark/15">
                   {/* Calendar Headers */}
                   {['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map((day) => (
                     <div key={day} className="text-center text-[10px] uppercase font-bold text-gold-dark/80 py-1 font-mono">

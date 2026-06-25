@@ -252,21 +252,22 @@ export default function App() {
           </div>
 
           {/* Quality Switch Buttons */}
-          <div className="flex bg-[#050505] p-1.5 rounded-xl border border-gold-dark/20 text-xs gap-1.5">
+          <div className="flex bg-[#050505] p-1 rounded-xl border border-gold-dark/20 text-[10px] sm:text-xs gap-1 w-full sm:w-auto justify-center">
             <button
               onClick={() => setViewMode('client')}
-              className={`py-2 px-5 rounded-lg font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2 ${viewMode === 'client' ? 'bg-gradient-to-r from-gold-dark to-gold-base text-black shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`py-2 px-3 sm:px-5 rounded-lg font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 flex-1 sm:flex-none ${viewMode === 'client' ? 'bg-gradient-to-r from-gold-dark to-gold-base text-black shadow-md' : 'text-gray-400 hover:text-white'}`}
             >
               <Smartphone className="w-3.5 h-3.5 shrink-0" />
-              <span>Área do Cliente (Site)</span>
+              <span className="truncate">Cliente</span>
+              <span className="hidden sm:inline truncate">(Site)</span>
             </button>
 
             <button
               onClick={() => setViewMode('ceo')}
-              className={`py-2 px-5 rounded-lg font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2 ${viewMode === 'ceo' ? 'bg-gradient-to-r from-gold-dark to-gold-base text-black shadow-md' : 'text-gray-400 hover:text-white'}`}
+              className={`py-2 px-3 sm:px-5 rounded-lg font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5 flex-1 sm:flex-none ${viewMode === 'ceo' ? 'bg-gradient-to-r from-gold-dark to-gold-base text-black shadow-md' : 'text-gray-400 hover:text-white'}`}
             >
               <Shield className="w-3.5 h-3.5 shrink-0" />
-              <span>Painel do Estúdio (Dashboard)</span>
+              <span className="truncate">Painel CEO</span>
             </button>
           </div>
 
