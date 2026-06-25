@@ -461,10 +461,10 @@ export default function AdminDashboard({
   };
 
   return (
-    <div className="min-h-screen bg-bg-black flex flex-col md:flex-row text-gray-300 font-sans selection:bg-gold-base selection:text-black">
+    <div className="min-h-screen bg-bg-black flex flex-col lg:flex-row text-gray-300 font-sans selection:bg-gold-base selection:text-black">
       
       {/* SIDEBAR NAVIGATION - DESKTOP ONLY */}
-      <aside className="hidden md:flex w-[270px] bg-[#0f0f0f] border-r border-gold-base/30 flex-col justify-between shrink-0 sticky top-0 h-screen z-20">
+      <aside className="hidden lg:flex w-[270px] bg-[#0f0f0f] border-r border-gold-base/30 flex-col justify-between shrink-0 sticky top-0 h-screen z-20">
         <div>
           {/* Logo Brand Header */}
           <div className="p-6 border-b border-gold-dark/20 flex flex-col items-center">
@@ -531,7 +531,7 @@ export default function AdminDashboard({
       </aside>
 
       {/* MOBILE BOTTOM NAVIGATION */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0f0f0f] border-t border-gold-base/30 z-50 flex justify-around items-center p-2 pb-4 shadow-[0_-4px_20px_rgba(8,8,8,0.8)] backdrop-blur-md">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#0f0f0f] border-t border-gold-base/30 z-50 flex justify-around items-center p-2 pb-4 shadow-[0_-4px_20px_rgba(8,8,8,0.8)] backdrop-blur-md">
         <button onClick={() => setActiveTab('geral')} className={`flex flex-col items-center justify-center w-full py-2 gap-1 transition-colors ${activeTab === 'geral' ? 'text-gold-light' : 'text-gray-500'}`}>
           <Home className={`w-5 h-5 ${activeTab === 'geral' ? 'drop-shadow-[0_0_8px_rgba(197,155,103,0.8)]' : ''}`} />
           <span className="text-[9px] uppercase font-bold tracking-widest">Geral</span>
@@ -555,7 +555,7 @@ export default function AdminDashboard({
       </nav>
 
       {/* MAIN CONTAINER */}
-      <main className="flex-1 overflow-y-auto h-screen p-4 pb-28 md:p-8 md:pb-8 lg:p-12 relative">
+      <main className="flex-1 overflow-y-auto h-screen p-4 pb-28 lg:p-8 lg:pb-8 xl:p-12 relative">
         
         {/* SOBERANO DASHBOARD SELECTOR - THREE MAJESTIC BUTTONS */}
         <div className="mb-10 p-5 rounded-2xl bg-gradient-to-r from-[#0d0c0a] via-[#050505] to-[#0d0c0a] border border-gold-dark/30 shadow-[0_0_30px_rgba(197,155,103,0.15)] animate-fade-in">
@@ -563,7 +563,7 @@ export default function AdminDashboard({
             <span className="text-[9px] uppercase tracking-[5px] text-gold-base font-bold font-sans">Seletor de Gestão Unificada</span>
             <h2 className="font-serif text-sm font-semibold text-white mt-1">Escolha a Esfera de Controle do Estúdio</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {/* Button 1: Tatuagem */}
             <button
               type="button"
