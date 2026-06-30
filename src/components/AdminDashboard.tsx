@@ -811,9 +811,14 @@ export default function AdminDashboard({
                               {booking.description}
                             </p>
                             {booking.referenceImage && (
-                              <a href={booking.referenceImage} target="_blank" rel="noreferrer" className="inline-flex mt-1.5 text-[9px] text-blue-400 hover:text-blue-300 items-center gap-1 uppercase tracking-wider font-bold">
-                                [Ver Imagem Anexada]
-                              </a>
+                              <div className="mt-2">
+                                <span className="text-[9px] text-blue-400 uppercase tracking-wider font-bold block mb-1">Referência Anexada:</span>
+                                <img 
+                                  src={booking.referenceImage} 
+                                  alt="Referência" 
+                                  className="w-full max-w-[180px] max-h-[180px] object-contain rounded-md border border-gold-dark/30 shadow-sm"
+                                />
+                              </div>
                             )}
                           </td>
 
