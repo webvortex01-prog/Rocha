@@ -45,7 +45,8 @@ import {
   Image,
   Upload,
   User,
-  Edit
+  Edit,
+  X
 } from 'lucide-react';
 
 interface AdminDashboardProps {
@@ -90,6 +91,7 @@ export default function AdminDashboard({
   
   const [activeTab, setActiveTab] = useState<'geral' | 'agenda' | 'financeiro' | 'estoque' | 'galeria'>('geral');
   const [dashboardFilter, setDashboardFilter] = useState<'tattoo' | 'piercing' | 'both'>('both');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const isPiercingBooking = (b: Booking): boolean => {
     if (!b.style) return false;
@@ -816,7 +818,8 @@ export default function AdminDashboard({
                                 <img 
                                   src={booking.referenceImage} 
                                   alt="Referência" 
-                                  className="w-full max-w-[180px] max-h-[180px] object-contain rounded-md border border-gold-dark/30 shadow-sm"
+                                  onClick={() => setSelectedImage(booking.referenceImage as string)}
+                                  className="w-full max-w-[180px] max-h-[180px] object-contain rounded-md border border-gold-dark/30 shadow-sm cursor-pointer hover:scale-105 transition-transform"
                                 />
                               </div>
                             )}
@@ -2075,6 +2078,23 @@ export default function AdminDashboard({
 
       </main>
 
+      {/* FULL SCREEN IMAGE MODAL */}
+      {selectedImage && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 transition-all duration-500 animate-fade-in" onClick={() => setSelectedImage(null)}>
+          <button 
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 border border-gold-base text-gold-light hover:bg-gold-base hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(197,155,103,0.3)]"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Referência Ampliada" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg border border-gold-dark/40 shadow-[0_0_40px_rgba(0,0,0,0.8)]"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
