@@ -766,7 +766,6 @@ export default function ClientSite({
                   <img 
                     src={item.imageUrl} 
                     alt={item.title}
-                    loading="lazy"
                     referrerPolicy="no-referrer"
                     className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
                   />
@@ -1101,7 +1100,6 @@ export default function ClientSite({
                           <img 
                             src={item.imageUrl} 
                             alt={item.title}
-                            loading="lazy"
                             referrerPolicy="no-referrer"
                             className="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105"
                           />
@@ -1203,7 +1201,6 @@ export default function ClientSite({
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        loading="lazy"
                         referrerPolicy="no-referrer"
                         className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
                       />
